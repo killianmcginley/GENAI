@@ -29,3 +29,13 @@ os.system("git add .")
 os.system('git commit -m "Committing the analysis script changes"')
 os.system("git push")
 
+overdue_tasks_by_project = data[data['OverDue'] == True]
+overdue_counts_by_project = overdue_tasks_by_project.groupby('Project').size()
+overdue_counts_by_project.plot(kind='bar', color='skyblue', edgecolor='black', figsize=(12, 6))
+plt.title('Number of Overdue Tasks by Project')
+plt.xlabel('Project')
+plt.ylabel('Number of Overdue Tasks')
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.savefig('/workspaces/GENAI/overdue_tasks_by_project.png')
+plt.show()
