@@ -40,3 +40,9 @@ plt.xticks(rotation=45)
 plt.tight_layout()
 plt.savefig('/workspaces/GENAI/overdue_tasks_by_project.png')
 plt.close()
+
+import os
+os.system("cd /workspaces/GENAI")
+os.system("git add .")
+os.system('git commit -m "Committing the analysis script changes"')
+os.system("git push")
