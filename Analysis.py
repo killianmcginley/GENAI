@@ -43,3 +43,19 @@ plt.tight_layout()
 plt.show()
 
 print(overdue_by_project)
+
+
+
+
+overdue_tasks = df[df['OverDue'] == 'Yes']
+overdue_by_project = overdue_tasks.groupby('project').size()
+plt.figure(figsize=(12, 6))
+overdue_by_project.plot(kind='bar', color='skyblue', edgecolor='black')
+plt.title('Number of Overdue Tasks by Project')
+plt.xlabel('Project')
+plt.ylabel('Number of Overdue Tasks')
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
+
+
