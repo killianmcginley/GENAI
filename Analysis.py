@@ -9,7 +9,7 @@ task_counts = data.groupby(['Task Group', 'Status']).size().unstack()
 task_counts = task_counts[['Open', 'Closed']]
 print(task_counts)
 
-import pandas as pd
+
 import matplotlib.pyplot as plt
 
 data = pd.read_csv('Construction_Data_PM_Tasks_All_Projects.csv')
