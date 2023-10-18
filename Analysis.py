@@ -41,3 +41,5 @@ plt.xlabel('Project')
 plt.xticks(rotation=45)
 plt.tight_layout()
 plt.show()
+
+print(overdue_by_project)
