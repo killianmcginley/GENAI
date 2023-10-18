@@ -29,22 +29,6 @@ os.system("git add .")
 os.system('git commit -m "Committing the analysis script changes"')
 os.system("git push")
 
-overdue_tasks = data[data['OverDue'] == 'Yes']
-overdue_by_project = overdue_tasks.groupby('project').size()
-import matplotlib.pyplot as plt
-
-plt.figure(figsize=(12, 6))
-overdue_by_project.plot(kind='bar', color='skyblue')
-plt.title('Number of Overdue Tasks by Project')
-plt.ylabel('Number of Overdue Tasks')
-plt.xlabel('Project')
-plt.xticks(rotation=45)
-plt.tight_layout()
-plt.show()
-
-print(overdue_by_project)
-
-
 
 
 overdue_tasks = df[df['OverDue'] == 'Yes']
